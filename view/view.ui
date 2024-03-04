@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>View</class>
+ <widget class="QWidget" name="View">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1723</width>
+    <height>505</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QListWidget" name="listWidgetStreet"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelZone">
+       <property name="text">
+        <string>Zone:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBoxPackage"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonDeliver">
+       <property name="text">
+        <string>Deliver</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QListWidget" name="listWidgetUndelivered"/>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButtonDeliver</sender>
+   <signal>clicked()</signal>
+   <receiver>View</receiver>
+   <slot>deliverPackage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>387</x>
+     <y>494</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>760</x>
+     <y>504</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidgetStreet</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>View</receiver>
+   <slot>showPackages()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>225</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBoxPackage</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>View</receiver>
+   <slot>showPackages()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>126</x>
+     <y>445</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>486</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>deliverPackage()</slot>
+  <slot>showPackages()</slot>
+ </slots>
+</ui>
